@@ -1,0 +1,16 @@
+#datosconstitucion_set-group select {
+    min-width: 76px;
+    width: 76px;
+}
+
+.vTextField[id*="id_datosconstitucion"] {
+    width: 8em;
+}
+
+#datosconstitucion_set-group .vDateField {
+    width: 6em;
+}
+
+.vTextField[id*="id_datosgenerales"] {
+    width: 8em;
+}

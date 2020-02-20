@@ -1,0 +1,273 @@
+@import 'style.styl'
+
+.font-weight
+	font-weight bold
+/*=============================================
+=            user-admin  		           =
+=============================================*/
+// .show-on-hover:hover
+// 	ul.dropdown-menu
+// 		display block
+.user-conf
+	.fas
+		font-size 18px
+		padding 0 5px
+
+/*=============================================
+=            Card 				            =
+=============================================*/
+.card-admin
+	box-shadow 1px 0px 20px rgba(0, 0, 0, 0.05)
+	position relative
+	display -ms-flexbox
+	display flex
+	-ms-flex-direction column
+	flex-direction column
+	min-width 0
+	word-wrap break-word
+	background-color #fff
+	background-clip border-box
+	border-radius .25rem
+	.card-body
+		flex 1 1 auto
+		padding 0.80rem
+	.round
+		line-height 75px
+		width 75px
+		height 75px
+		font-size 30px
+		display inline-block
+		font-weight 400
+		border 3px solid #f8f8fe
+		text-align center
+		border-radius 50%
+		background #e1e4fb
+
+.data-graf
+	padding 20px 10px
+	border 1px solid white
+	background color-theme
+	.round-mini
+		line-height 50px
+		font-size 50px
+		display inline-block
+		font-weight 400
+		text-align center
+.round-inner
+	color letra
+.text-muted
+	color: #707070 !important
+.flex-row
+	flex-direction row !important
+.d-flex
+	display flex !important
+.align-self-center
+    align-self center !important
+.align-self-end
+	align-self flex-end !important
+/*===================================
+=            tablas            =
+===================================*/
+.table
+	th
+		font-family letra-titulo
+	td 
+		&[rowspan]
+			vertical-align middle
+
+.tabla-acti
+	th
+		text-align center
+		background color-theme
+		color white
+		vertical-align middle !important
+	td
+		text-align center
+		vertical-align middle !important
+		&[bgcolor]
+			color white
+			font-weight bold
+
+		
+	.ancho-th
+		width 550px
+		text-align left
+		background white
+		Color #484848
+th.ancho-th.bg-theme-colored-darker2.text-white
+	text-align center	
+		
+.table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th
+	padding 2px
+.bg-twitter
+	background-color #1da1f2
+.bg-fb
+	background-color #3b5998
+.bg-insta
+	background-color #c13584
+.bg-youtube
+	background-color #ff0000
+
+
+/*===================================
+=            formularios            =
+===================================*/
+input.form-control.input-sm
+	height 30px !important
+.select2-container .select2-selection--single, .select2-container--default .select2-selection--single .select2-selection__arrow
+	height 45px
+.select2-container--default .select2-selection--single .select2-selection__rendered
+	line-height 45px
+.header-dropdown li.active .tab_btn
+	background-color #3db4d9
+	color #fff
+.content-indicador .tab-content
+.container-perfil .tab-content
+	border 0
+	padding 0
+/*===================================
+=            Graficos            =
+===================================*/
+.tab-indicador
+	padding 0px
+	border 0px
+.tacometro1
+	position absolute
+	z-index 2
+	left 40px
+/*===================================
+=            Tabpanel            =
+===================================*/
+
+.tab-dash
+.tab-perfil
+	.tab-content
+		border 0
+	.nav-tabs > li.active a, .nav-tabs > li.active a:hover, .nav-tabs > li.active a:focus
+		background-color color-theme
+		color white
+		border-color color-theme
+
+/*===================================
+=            ficha            =
+===================================*/
+.perfil-caps
+	label
+		font-size .9em
+		text-transform inicial
+	.styled-icons
+		position relative
+		margin-top -60px
+		z-index 2
+		top -20px
+	
+.badge-movistar
+	background-color movistar
+	border-radius 50px
+.badge-claro
+	background-color #EF3829
+	border-radius 50px
+.label-contenido
+	background-color #f5f5f5
+	padding 10px 20px
+	color #096480
+	font-weight bold
+	font-size .9em
+	text-align center
+	li
+		font-weight bold !important
+.label-contenido.text-left
+	text-align left !important
+a:hover
+	color color-theme
+.progress-bar
+	border-radius 10px
+	.percent
+		display none
+.progress-type
+	position absolute
+	left 50px
+	font-weight 800
+	line-height 18px
+	color rgb(255, 255, 255)
+	font-size .9 rem
+.progress-completed
+	position absolute
+	right 0px
+	font-weight 800
+	line-height 18px
+	margin-right 20px
+	font-size .9 rem
+.progress-animated {
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: myanimation;
+  -webkit-transition: 5s all;
+  animation-duration: 5s;
+  animation-name: myanimation;
+  -o-transition: 5s all;
+  transition: 5s all; }
+
+@-webkit-keyframes myanimation {
+  from {
+    width: 0; } }
+
+@keyframes myanimation {
+  from {
+    width: 0; } }
+
+/********* peticiones *********/
+.header-dropdown
+	position relative
+	float right
+	top -10px
+	list-style none
+	li
+		display: inline-block;
+		a
+			display block
+		.tab_btn
+			border-radius 32px
+			font-size 12px
+			font-weight 700
+			background #eee
+			color #777
+			width 40px
+			height 40px
+			line-height 32px
+			text-align center
+			padding 5px
+		.tab_btn.active
+			background-color color-theme
+			color white
+	.dropdown
+		position relative
+.card-body .header .header-dropdown
+	position absolute
+	top 14px
+	right 15px
+.badge-theme-color
+	background-color color-theme
+	Color white
+.badge-resuelto
+	background transparent
+	border 1px solid #5cb85c
+	color #5cb85c
+.badge-pendiente
+	background transparent
+	border 1px solid #f0ad4e
+	color #f0ad4e
+.badge-cerrado
+	background transparent
+	border 1px solid #d9534f
+	color #d9534f
+.btn-outline
+	color #6c757d
+	border-color #6c757d
+html body 
+	.flotTip
+	.jqstooltip
+		width auto!important
+		height auto!important
+		background #343a40
+		color #fff
+		padding 5px 10px

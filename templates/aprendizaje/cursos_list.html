@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% load thumbnail %}
+
+
+{% block extra_css %}
+	<link href="/static/css/hover/imagehover.min.css" rel="stylesheet" type="text/css">
+{% endblock extra_css %}
+
+{% block extra_js %}
+<script>
+  $('.menuzord-menu li.menu3').addClass('active');
+</script>
+{% endblock extra_js %}
+
+{% block contenido %}
+
+<section class="inner-header layer-overlay bg-title" {% thumbnail site_config.foto_fondo_aprende '1300x200' as im %}data-bg-img="{{im.url}}" {% endthumbnail %}>
+        <div class="container pt-30 pb-30">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-sm-8 xs-text-center">
+                        <h2 class="text-white mt-10">Cursos</h2>
+                        <ol class="breadcrumb white mt-10 text-left">
+                            <li><a href="/">Inicio</a></li>
+                            <li class="active">Aprende</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section: aprende  -->
+    <section>
+    	<div class="container">
+    		<div class="row multi-row-clearfix">
+    			<h2 class="title line-bottom">Conócenos y contribuye a la <span class="text-theme-colored">Gestión del Agua</span></h2>
+    			<div class="blog-posts">
+                {% for curso in object_list %}
+    				<div class="col-md-4">
+    					<article class="post clearfix mb-30 bg-lighter">
+    						<div class="entry-header">
+    							<div class="post-thumb thumb">
+    								<figure class="post-thumb thumb imghvr-hinge-left bg-theme-colored">
+                                {% if curso.imagen %}
+                                        {% thumbnail curso.imagen "830x620" crop="center" as im %}
+                                            <img src="{{ im.url }}" alt="{{imagen.titulo}}" alt="{{imagen.titulo}}" class="img-fullwidth">
+                                        {% endthumbnail %}
+                                {% else %}
+                                            <img src="http://placehold.it/830x620" alt="" class="img-responsive img-fullwidth">
+                                {% endif %}
+    									<figcaption class="bg-theme-colored">
+    										<p>{{curso.descripcion|safe|truncatewords:21}}</p>
+    									</figcaption>
+    								</figure>
+    							</div>
+    						</div>
+    						<div class="entry-content p-20 pr-10">
+    							<div class="entry-meta media mt-0 no-bg no-border">
+
+    								<div class="media-body">
+    									<div class="event-content pull-left flip">
+    										<h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href={% if curso.activo == True %}"{% url 'detail_course' curso.slug %}"{% endif %}>{{curso.titulo}}</a></h4>
+
+    									</div>
+    								</div>
+    							</div>
+                                {% if curso.activo == True %}
+                                    <a href="{% url 'detail_course' curso.slug %}" class="btn btn-border btn-theme-colored pull-right hvr-box-shadow-outset">Ver curso <i class="fa fa-arrow-circle-right"></i></a>
+                                {% else %}
+                                    <a href="#"  class="btn btn-border btn-theme-colored pull-right hvr-box-shadow-outset">Proximamente</a>
+                                {% endif %}
+
+    							<div class="clearfix"></div>
+    						</div>
+    					</article>
+    				</div>
+                {% endfor %}
+
+                    <div class="col-md-12">
+                        {% if is_paginated %}
+                          <ul class="pagination theme-colored">
+                            {% if page_obj.has_previous %}
+                              <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                            {% else %}
+                              <li class="disabled"><span>&laquo;</span></li>
+                            {% endif %}
+                            {% for i in paginator.page_range %}
+                              {% if page_obj.number == i %}
+                                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                              {% else %}
+                                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                              {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                              <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                            {% else %}
+                              <li class="disabled"><span>&raquo;</span></li>
+                            {% endif %}
+                          </ul>
+                        {% endif %}
+                    </div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+{% endblock contenido %}

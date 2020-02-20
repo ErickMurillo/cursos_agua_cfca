@@ -1,0 +1,725 @@
+/*=============================================
+Colores
+=============================================*/
+color-theme = #3DB4D9
+azul = #005CB9
+negro = #231f20
+claroazul = #c6d9f0
+naranja = #ed6e22
+rojo = #551108
+verde = #125444
+amarillo = #fff101
+interazul = #6bcff6
+gris = #939598
+no-active = #f1f1f1
+letra = #484848
+movistar = #5bc500
+
+/*=============================================
+mixin
+=============================================*/
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -o-{prop} args
+  {prop} args
+
+animation()
+  vendor('animation', arguments)
+
+border-radius()
+  vendor('border-radius', arguments)
+
+border-top-radius() 
+  vendor('border-top-left-radius', arguments)
+  vendor('border-top-right-radius', arguments)
+
+border-top-radius() 
+  vendor('border-bottom-left-radius', arguments)
+  vendor('border-bottom-right-radius', arguments)
+
+linear-gradient(start_color, end_color, start = left top, end = left bottom)
+  mozstart = top if start = left top
+  background start_color
+  background -moz-linear-gradient(mozstart, start_color 0%, end_color 100%)
+  background -webkit-gradient(linear, start, end, color-stop(0%, start_color), color-stop(100%, end_color))
+  -webkit-background-origin padding-box
+
+background-clip()
+  vendor('background-clip', arguments)
+
+box-shadow() 
+  -moz-box-shadow arguments
+  -webkit-box-shadow arguments
+  box-shadow arguments
+
+box(orient, pack, align) 
+  display -webkit-box
+  display -moz-box
+  display box
+  vendor('box-orient', orient)
+  vendor('box-pack', pack)
+  vendor('box-align', align)
+  vendor('box-lines', multiple)
+
+box_flex()
+  vendor('box-flex', arguments)
+
+text-fill-color()
+  vendor('text-fill-color', arguments)
+
+transition()
+  vendor('transition', arguments)
+
+transform()
+  vendor('transform', arguments)
+/*=============================================
+Fuente
+=============================================*/
+@font-face 
+  font-family: "itc-avant-garde-gothic-lt-book-regular"
+  src: url("../fonts/itc-avant-garde-gothic-lt-book-regular.otf")
+@font-face 
+  font-family: "Museo-500-Regular"
+  src: url("../fonts/Museo-500-Regular.otf")
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+font-size = 16px
+letra-lectura = 'Open Sans', sans-serif
+letra-titulo = 'Museo-500-Regular', sans-serif
+body
+	font-family letra-lectura
+	font-size  16px
+	color letra
+p
+	font-family letra-lectura
+	font-size 17px
+h2, h3, h4, h5, h6
+	font-family letra-titulo
+	a
+		font-family letra-titulo
+.border-0{
+    border: 0 ;
+}
+
+/*=============================================
+menu y header
+=============================================*/
+.menuzord-menu 
+    li > a
+        font-family letra-titulo
+        font-size 14px
+    ul.dropdown li.active a
+        background-color color-theme
+        color white
+.menuzord-brand img
+	max-height 40px
+    
+.breadcrumb
+    text-align left  
+.menuzord .showhide
+    float left
+#side-panel .side-panel-wrap
+    padding: 40px 10px 40px 10px
+#side-panel .widget
+    width 270px
+#side-panel-trigger
+    margin-top 14px
+
+
+
+@media only screen and (max-width: 480px) {
+  .menuzord-responsive .menuzord-brand{
+      width 60%
+  }
+}
+
+.btn-menu
+    position fixed
+    z-index 99
+    left 0
+    bottom 0
+    border-radius 500px
+    width 66px
+    height 66px
+/*=============================================
+index
+=============================================*/
+.causes .thumb .donate-now
+    left 0
+    margin 0 auto
+    position absolute
+    right 0
+    text-align center
+    bottom 10px
+    left 10px
+.schedule-box .donate-now
+    left 0
+    margin 0 auto
+    position absolute
+    right 0
+    text-align center
+    bottom 30px
+    left 15px
+.event-title
+	background-color negro
+.donate-now a
+    font-weight bold
+    color white
+    text-transform uppercase
+    font-size 12px
+    cursor auto
+    &:hover
+        color white
+.ow-hidden
+    overflow hidden
+/***********Datos************/
+.border-2
+    border-right: 1px dashed color-theme
+.box-text
+    text-align right
+    h3
+        font-weight bold
+    .icon-data
+        position absolute
+        left 10%
+        top 10%
+.scale_effect
+    transition: all 500ms ease 0s
+    &:hover
+        transform: scale(1.1)    
+/*=============================================
+Videos
+=============================================*/
+.videos-list
+    background-color #111111
+    // .spidochetube
+    //     max-width 1200px
+    //     .spidochetube_inner
+    //         padding 0px
+    .nav_videos
+        li a
+            padding: 0
+            color white
+            text-align left
+            font-weight 600
+        li.active a
+            color: #111111
+/*=============================================
+listas 
+=============================================*/
+ol.list
+    list-style decimal
+    margin-top 13px
+    padding-left 30px
+    li
+        margin 5px 0
+        font-weight 500
+        position relative
+
+
+
+
+/*=============================================
+Documentate
+=============================================*/
+button.btn.btn-primary.dropdown-toggle.btn-theme-colored
+    border-left-color #118bb1
+.nav-filter
+    li
+        display inline-block
+    li.active a
+        background-color: color-theme
+        color: white
+        border-color color-theme
+/*=============================================
+Galleria
+=============================================*/
+.gallery-isotope .all-gallery
+    .thumb
+        min-height 210px
+    h4
+        height  50px
+/*=============================================
+aprende
+=============================================*/
+.widget-title
+    font-size 17px 
+.panel-group .panel-title a.active::after
+    background-color color-theme
+.post .separator
+    margin 10px 0px
+.post p a
+    color color-theme
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover
+    background-color color-theme
+    border-color color-theme
+.affix
+    top 100px
+.list-group-item:first-child
+.list-group-item:last-child
+    border-radius 0px
+.tab-content .separator
+    margin 15px 0px 0px 0px
+.bg-title
+    background-image no-repeat
+    background-size cover
+/*----------  Share  ----------*/
+.share-button
+    position relative
+    width 50px
+    .toggle-input
+        display none
+    .toggle
+        position relative
+        width 40px
+        height 40px
+        z-index 10
+        display block
+        border-radius 25px
+        cursor pointer
+        color color-theme
+        box-shadow inset 0 0 0 1px color-theme
+        &:after 
+            position relative
+            display block
+            width 40px
+            height 40px
+            font-family 'Font Awesome 5 Free'
+            content "\f1e0"
+            line-height 40px
+            font-size 20px
+            text-align center
+            left -2px
+            font-weight 900
+
+.toggle-input:checked + 
+    .toggle:before
+        background-color color-theme
+        content ""
+        height 3px
+        width 20px
+        position absolute
+        left 10px
+        top 20px
+        transform rotate(-45deg)
+        animation barbefore 0.3s forwards
+    .toggle:after
+        background-color color-theme
+        content ""
+        height 3px
+        width 20px
+        position absolute
+        left 10px
+        top 20px
+        transform rotate(45deg)
+        animation barafter 0.3s forwards
+
+
+.network-list
+    li
+        position absolute
+        top 0
+        left 0
+        display block
+        width 40px
+        height 40px
+        margin 0
+        padding 0
+        list-style-type none
+        opacity 0
+        transition all 0.25s cubic-bezier(0.43, 1.17, 0.69, 1.24)
+        a
+            position relative
+            display block
+            width 40px
+            height 40px
+            overflow hidden
+            line-height 40px
+            text-indent 120%
+            text-decoration none
+            &:before
+                top 0
+                right 0
+                bottom 0
+                left 0
+                position absolute
+                width 40px
+                height 40px
+                border-radius 25px
+                font-family 'Font Awesome 5 Free'
+                font-size 18px
+                -webkit-font-smoothing antialiased
+                text-align center
+                line-height 40px
+                text-indent 0
+                box-shadow inset 0 0 0 1px #C8C7C0
+        &.twitter a
+            &:before
+                content "\f099"
+                color #00C3F3
+                font-family 'Font Awesome 5 Brands'
+            &:hover:before
+                box-shadow inset 0 0 0 2px #00C3F3
+        &.facebook a
+            &:before
+                content "\f39e"
+                color #2C609B
+                font-family 'Font Awesome 5 Brands'
+
+            &:hover:before
+                box-shadow inset 0 0 0 2px #2C609B
+
+input:checked ~ .network-list li
+    opacity 1
+    &:nth-child(1)
+        left 50px
+    &:nth-child(2)
+        left 100px
+    &:nth-child(3)
+        left 150px
+
+@-webkit-keyframes barafter
+    0%
+        content "\f1e0"
+        width 46px
+        height 40px
+        background-color transparent
+        transform rotate(0deg) scale(1)
+        top 0
+        left 0
+        opacity 1
+
+    50% 
+        background-color transparent
+        content "\f1e0"
+        width 46px
+        height 40px
+        top 0
+        left 0
+        transform rotate(0deg) scale(0.2)
+        opacity 0
+
+    50.001%
+        background-color: #fff
+        left 10px
+        top 22px
+        content ""
+        height 3px
+        width 30px
+
+    60%
+        transform rotate(0deg) scale(1)
+        opacity 1
+    100%
+        transform: rotate(45deg) scale(1);
+
+
+@-webkit-keyframes barbefore
+    0%
+        background-color transparent
+        -webkit-transform rotate(0deg) scale(0.2)
+        opacity 0
+    50%
+        background-color transparent
+        transform rotate(0deg) scale(0.2)
+        opacity 0
+    60%
+        transform rotate(0deg) scale(1)
+        opacity 1
+    100% 
+        transform rotate(-45deg) scale(1)
+
+
+/*------------menu---------------*/
+
+    
+
+    
+/*=============================================
+Noticias
+=============================================*/
+.styled-icons.icon-sm a
+    font-size 18px
+    margin 2px 10px 2px 0
+.type-post .entry-content h3.entry-title
+  font-family letra-titulo
+  font-size 18px
+.type-post .entry-content .entry-title > a
+  font-family letra-titulo
+  font-size 18px
+article.type-post .entry-content > p
+  font letra-lectura
+.header-nav .header-nav-wrapper.scroll-to-fixed-fixed.scroll-to-fixed-fixed
+  border 0px
+.schedule-box .thumb
+    margin-top 20px
+    margin-bottom 20px
+    
+.title-dots span
+	font-family letra-titulo
+	font-size 20px
+    
+.noticia .post   
+    .post-thumb
+        figcaption
+            background rgba(0, 0, 0, 0.5)
+            color #fff
+            position relative
+            padding 10px 15px
+            top -46px
+            margin-bottom -46px
+            font-size  13px
+        .credito-video
+            background rgba(0, 0, 0, 0.75)
+            color #fff
+            padding 10px 15px
+            font-size  13px
+
+    .entry-cover:before
+      	background -moz-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 34%, rgba(0,0,0,1) 100%)
+      	background -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(34%, rgba(255,255,255,0.34)), color-stop(100%, rgba(0,0,0,1)))
+      	background -webkit-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 34%, rgba(0,0,0,1) 100%)
+      	background -o-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 34%, rgba(0,0,0,1) 100%)
+      	background -ms-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 34%, rgba(0,0,0,1) 100%)
+      	background linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 34%, rgba(0,0,0,1) 100%)
+      	bottom 0
+      	display inline-block
+      	content ""
+      	left 0
+      	position absolute
+      	right 0
+      	top 0
+      	opacity 0.8
+      	-webkit-transition all 0.5s ease 0s
+      	-moz-transition all 0.5s ease 0s
+      	-o-transition all 0.5s ease 0s
+      	transition all 0.5s ease 0s
+.content-nota, .contenido-leccion
+    figcaption
+        background rgba(0, 0, 0, 0.5)
+        color #fff
+        position relative
+        padding 10px 15px
+        top -42px
+        margin-bottom: -42px;
+        font-size  13px
+        text-align left
+    blockquote
+        border 0
+        font-size 22px !important
+        padding 10px 10px 10px 70px
+        
+        &:before
+            content '\f10d'
+            font-family 'Font Awesome 5 Free'
+            font-weight 900
+            font-size 50px
+            position absolute
+            left 30px
+            margin-top -15px
+            color color-theme
+        span
+            font-size 22px !important
+        p
+            font-family letra-lectura
+            padding 5px 20px 
+            font-weight 500
+            
+            //tipo uno
+            // border-radius 20px
+            // border 1px solid color-theme !important
+            //tipo 2
+            border-left 3px solid color-theme
+            strong
+                color color-theme
+    a
+        color color-theme
+        strong
+            color color-theme
+        &:after
+            content '\f35d'
+            font-family 'Font Awesome 5 Free'
+            font-weight 600
+            padding-left 5px
+            vertical-align super
+            font-size 12px
+    
+    ul.list li a
+        color color-theme
+    h1, h2, h3, h4, h5, h6
+        color color-theme
+         
+.widget-title .color-1
+    background-color: #005CB9
+.widget-title .color-2
+    background-color: #ed6e22
+.widget-title .color-3
+    background-color: #551108
+.widget-title .color-4
+    background-color: #125444
+.widget-title .color-5
+    background-color: #6bcff6
+// .ck-contenido img
+//     height auto !important
+/*=============================================
+footer
+=============================================*/
+footer .widget ul.list li a
+    font-size 17px
+a.dir
+    line-height 2
+.widget .post-title a
+.widget.dark .widget-title.line-bottom
+	font-size 17px
+.post-date
+	color #808080
+ /*==============================
+ =            evento            =
+ ==============================*/
+.info-box-evento
+    li
+        position: relative;
+        padding-left: 60px;
+        color: #8d8d8d;
+        min-height: 50px;
+        font-size: 15px;
+        margin-bottom: 25px;
+        .icon
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            margin-top: -25px;
+            height: 50px;
+            line-height: 50px;
+            color: #dee1e3;
+            font-size: 36px;
+        strong
+            display: block;
+            color: #000000;
+            font-weight: 700;
+            font-size: 18px;
+.info-box-evento.list-inline li
+    margin-right 20px
+ /*==============================
+ =            Login            =
+ ==============================*/
+
+.socialaccount_providers
+    .facebook
+        background-color: #2C609B
+    .twitter
+        background-color: #00C3F3
+    .google
+        background-color: #DB4437
+/*=============================================
+Responsive
+=============================================*/
+@media (max-width: 480px)
+    .gallery-isotope .all-gallery
+        .thumb
+            min-height 260px
+@media (max-width: 576px){}
+    
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px)
+    .content-nota, .contenido-leccion, .section-default
+        img
+            height auto
+    footer
+        background #171613 !important
+    .videos-list .nav_videos li a
+    .videos-list .nav_videos li.active a
+        border 0
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px)
+    .title-video
+        padding-left:15px
+    label[for=form_checkbox]
+        float: right 
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)
+    .video-content 
+        width 900px
+    .title-video
+        padding-left: 0
+    .nav_videos h5
+        margin-top 0
+    label[for=form_checkbox]
+        float: right 
+
+
+
+
+
+
+// .display-table-cell p
+//     padding 0px 20px
+//     text-align left
+
+
+
+
+
+
+
+
+
+
+
+// h1 {
+//   position: absolute;
+//   top: 5vh;
+//   left: 0;
+//   width: 100%;
+//   text-align: center;
+//   font-size: 22px;
+//   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//   color: #C4C2BB;
+//   text-shadow: 1px 1px 0px #FFFFFF;
+//   letter-spacing: 0.5px;
+// }
+
+// .color-1 .donate-now  a {
+// background-color: #005CB9;
+// border-color: #005CB9;
+// color: white;
+// }
+// .color-2 .donate-now  a {
+// background-color: #ed6e22;
+// border-color: #ed6e22;
+// color: white;
+// }
+// .color-3 .donate-now  a {
+// background-color: #551108;
+// border-color: #551108;
+// color: white;
+// }
+// .color-4 .donate-now  a {
+// background-color: #125444;
+// border-color: #125444;
+// color: white;
+// }
+// .color-5 .donate-now  a {
+// background-color: #6bcff6;
+// border-color: #6bcff6;
+// color: white;
+// }
+// .color-6 .donate-now  a {
+// background-color: #fff101;
+// border-color: #fff101;
+// color: white;
+// }
+// .color-7 .donate-now  a {
+// background-color: #ee3440;
+// border-color: #ee3440;
+// color: white;
+// }
+// .color-8 .donate-now  a {
+// background-color: #00aed7;
+// border-color: #00aed7;
+// color: white;
+// }
+
