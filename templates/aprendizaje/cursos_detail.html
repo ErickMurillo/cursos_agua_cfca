@@ -175,7 +175,9 @@
                                 <br>
                                 <div class="video-tutorial">
                                 {% if contenidos.url_video %}
-                                   {% video contenidos.url_video '480x360' %}
+                                   <video width="480" height="360" controls>
+                                      <source src="/media/{{contenidos.url_video}}" type="video/mp4">
+                                    </video>
                                 {% endif %}
                                 </div>
                             </div>

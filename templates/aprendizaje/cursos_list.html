@@ -15,7 +15,7 @@
 
 {% block contenido %}
 
-<section class="inner-header layer-overlay bg-title" {% thumbnail site_config.foto_fondo_aprende '1300x200' as im %}data-bg-img="{{im.url}}" {% endthumbnail %}>
+<section class="inner-header layer-overlay bg-title" data-bg-img="/static/img/fondos/aprende.jpg">
         <div class="container pt-30 pb-30">
             <!-- Section Content -->
             <div class="section-content">
@@ -46,6 +46,7 @@
                                 {% if curso.imagen %}
                                         {% thumbnail curso.imagen "830x620" crop="center" as im %}
                                             <img src="{{ im.url }}" alt="{{imagen.titulo}}" alt="{{imagen.titulo}}" class="img-fullwidth">
+                                    
                                         {% endthumbnail %}
                                 {% else %}
                                             <img src="http://placehold.it/830x620" alt="" class="img-responsive img-fullwidth">
