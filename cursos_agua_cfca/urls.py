@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('aprendizaje.urls')),
+    path('covid19-nicaragua/', TemplateView.as_view(template_name="covid.html")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
