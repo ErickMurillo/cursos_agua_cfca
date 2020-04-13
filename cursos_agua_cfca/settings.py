@@ -29,11 +29,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aprendizaje',
+    'configuracion',
     'ckeditor',
     'ckeditor_uploader',
     'nested_inline',
     'sorl.thumbnail',
     'embed_video',
+    'solo',
 ]
 
 MIDDLEWARE = [
@@ -106,11 +108,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 MEDIA_ROOT = os.environ.get('MEDIA_ROOT', os.path.join(BASE_DIR, 'media'))
-MEDIA_URL = 'http://192.168.88.1:85/media/'
+MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(BASE_DIR, 'static'))
 
-STATIC_URL = 'http://192.168.88.1:85/static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_media"),
