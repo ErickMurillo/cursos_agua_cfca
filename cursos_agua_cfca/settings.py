@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'embed_video',
     'solo',
-    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -184,5 +183,3 @@ CKEDITOR_CONFIGS = {
 }
 
 FILE_UPLOAD_PERMISSIONS = 0o644
-
-COMPRESS_ENABLED = True
