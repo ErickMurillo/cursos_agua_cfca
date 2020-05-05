@@ -175,7 +175,7 @@
                                 <br>
                                 <div class="video-tutorial">
                                 {% if contenidos.url_video %}
-                                   <video width="480" height="360" controls>
+                                   <video width="100%" height="460" controls download >
                                       <source src="/media/{{contenidos.url_video}}" type="video/mp4">
                                     </video>
                                 {% endif %}
@@ -308,8 +308,8 @@
 
 {% endblock contenido %}
 {% block extra_js %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+<script src="/static/jquery-ui.min.js"></script>
+<script src="/static/TweenMax.min.js"></script>
 
 <script src="/static/js/jquery.sticky.js"></script>
 <script src="/static/js/aprendisaje.js"></script>

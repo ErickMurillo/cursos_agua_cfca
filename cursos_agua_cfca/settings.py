@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'embed_video',
     'solo',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -118,6 +119,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_media"),
 ]
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_BROWSE_SHOW_DIRS = True
@@ -176,3 +184,5 @@ CKEDITOR_CONFIGS = {
 }
 
 FILE_UPLOAD_PERMISSIONS = 0o644
+
+COMPRESS_ENABLED = True
