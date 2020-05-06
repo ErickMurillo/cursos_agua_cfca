@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'embed_video',
     'solo',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -183,3 +184,12 @@ CKEDITOR_CONFIGS = {
 }
 
 FILE_UPLOAD_PERMISSIONS = 0o644
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ENABLED = True
